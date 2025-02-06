@@ -25,7 +25,7 @@ func main() {
 
 	http.HandleFunc("/home", homePage)
 	http.HandleFunc("/movies", moviesPage)
-	http.HandleFunc("/about", aboutPage)
+	http.HandleFunc("/signin", signinPage)
 	http.HandleFunc("/contact", contactPage)
 
 	err := http.ListenAndServe("0.0.0.0:8080", nil)
