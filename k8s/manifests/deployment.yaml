@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webflix
+  labels:
+    app: webflix
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: webflix
+  template:
+    metadata:
+      labels:
+        app: webflix
+    spec:
+      containers:
+      - name: webflix
+        image: somdock7/webflix:v1
+        ports:
+        - containerPort: 8080
