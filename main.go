@@ -23,7 +23,7 @@ func contactPage(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 
-	http.HandleFunc("/home", homePage)
+	http.HandleFunc("/", homePage)
 	http.HandleFunc("/movies", moviesPage)
 	http.HandleFunc("/signin", signinPage)
 	http.HandleFunc("/contact", contactPage)
