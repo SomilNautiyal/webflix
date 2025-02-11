@@ -5,32 +5,16 @@ import (
 	"net/http"
 )
 
-func homePage(w http.ResponseWriter, r *http.Request) {
-	http.ServeFile(w, r, "static/Webflix.html")
-}
-
-func moviesPage(w http.ResponseWriter, r *http.Request) {
-	http.ServeFile(w, r, "static/index.html")
-}
-
-func signinPage(w http.ResponseWriter, r *http.Request) {
-	http.ServeFile(w, r, "static/signin.html")
-}
-
-func contactPage(w http.ResponseWriter, r *http.Request) {
-	http.ServeFile(w, r, "static/Contact Us.html")
+// Serve static files directly from "static/" without needing "/static/" in URLs
+func serveStaticFiles() {
+	fs := http.FileServer(http.Dir("static"))
+	http.Handle("/", fs)
 }
 
 func main() {
+	serveStaticFiles() // Setup static file handling
 
-	fs := http.FileServer(http.Dir("static"))
-	http.Handle("/", fs)
-
-	http.HandleFunc("/", homePage)
-	http.HandleFunc("/movies", moviesPage)
-	http.HandleFunc("/signin", signinPage)
-	http.HandleFunc("/contact", contactPage)
-
+	// Start the server
 	err := http.ListenAndServe("0.0.0.0:8080", nil)
 	if err != nil {
 		log.Fatal(err)
