@@ -1,22 +1,19 @@
 package main
 
 import (
-	"log"
 	"net/http"
 )
 
-// Serve static files directly from "static/" without needing "/static/" in URLs
-func serveStaticFiles() {
-	fs := http.FileServer(http.Dir("static"))
-	http.Handle("/", fs)
+// Capitalize HomePage to make it accessible in tests
+func HomePage(w http.ResponseWriter, r *http.Request) {
+	http.ServeFile(w, r, "static/Webflix.html")
 }
 
 func main() {
-	serveStaticFiles() // Setup static file handling
+	http.HandleFunc("/", HomePage)
 
-	// Start the server
 	err := http.ListenAndServe("0.0.0.0:8080", nil)
 	if err != nil {
-		log.Fatal(err)
+		panic(err)
 	}
 }
