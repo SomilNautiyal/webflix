@@ -14,7 +14,7 @@ func TestHomePage(t *testing.T) {
 	}
 
 	rr := httptest.NewRecorder()
-	handler := http.HandlerFunc(HomePage) // Now using exported function
+	handler := http.HandlerFunc(HomePage)
 
 	handler.ServeHTTP(rr, req)
 

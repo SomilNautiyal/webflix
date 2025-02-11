@@ -4,13 +4,9 @@ import (
 	"net/http"
 )
 
-// Capitalize HomePage to make it accessible in tests
-func HomePage(w http.ResponseWriter, r *http.Request) {
-	http.ServeFile(w, r, "static/Webflix.html")
-}
-
 func main() {
-	http.HandleFunc("/", HomePage)
+	fs := http.FileServer(http.Dir("static"))
+	http.Handle("/", fs)
 
 	err := http.ListenAndServe("0.0.0.0:8080", nil)
 	if err != nil {
