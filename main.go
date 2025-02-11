@@ -24,7 +24,7 @@ func contactPage(w http.ResponseWriter, r *http.Request) {
 func main() {
 
 	fs := http.FileServer(http.Dir("static/images"))
-	http.Handle("/images/", http.StripPrefix("/images/", fs))
+	http.Handle("/Images/", http.StripPrefix("/Images/", fs))
 
 	http.HandleFunc("/", homePage)
 	http.HandleFunc("/movies", moviesPage)
