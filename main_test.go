@@ -3,18 +3,17 @@ package main
 import (
 	"net/http"
 	"net/http/httptest"
-	"strings"
 	"testing"
 )
 
-func TestHomePage(t *testing.T) {
-	req, err := http.NewRequest("GET", "/", nil)
+func TestMain(t *testing.T) {
+	req, err := http.NewRequest("GET", "/home", nil)
 	if err != nil {
 		t.Fatal(err)
 	}
 
 	rr := httptest.NewRecorder()
-	handler := http.HandlerFunc(HomePage)
+	handler := http.HandlerFunc(homePage)
 
 	handler.ServeHTTP(rr, req)
 
@@ -23,9 +22,9 @@ func TestHomePage(t *testing.T) {
 			status, http.StatusOK)
 	}
 
-	contentType := rr.Header().Get("Content-Type")
-	if !strings.Contains(contentType, "text/html") {
-		t.Errorf("handler returned unexpected content type: got %v, expected it to contain 'text/html'",
-			contentType)
+	expected := "text/html; charset=utf-8"
+	if contentType := rr.Header().Get("Content-Type"); contentType != expected {
+		t.Errorf("handler returned unexpected content type: got %v want %v",
+			contentType, expected)
 	}
 }
