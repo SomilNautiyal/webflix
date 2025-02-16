@@ -14,7 +14,7 @@ func main() {
 	fs := http.FileServer(http.Dir("static"))
 	http.Handle("/", fs)
 
-	http.HandleFunc("/home", homePage)
+	http.HandleFunc("/test/home", homePage)
 
 	err := http.ListenAndServe("0.0.0.0:8080", nil)
 	if err != nil {
