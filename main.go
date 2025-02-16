@@ -6,7 +6,7 @@ import (
 )
 
 func homePage(w http.ResponseWriter, r *http.Request) {
-	http.ServeFile(w, r, "static/movies.html")
+	http.ServeFile(w, r, "static/contact.html")
 }
 
 func main() {
