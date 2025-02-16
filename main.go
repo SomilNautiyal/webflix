@@ -12,7 +12,7 @@ func homePage(w http.ResponseWriter, r *http.Request) {
 func main() {
 
 	fs := http.FileServer(http.Dir("static"))
-	http.Handle("/static/", fs)
+	http.Handle("/", fs)
 
 	http.HandleFunc("/home", homePage)
 
