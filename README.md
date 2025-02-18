@@ -14,8 +14,8 @@ The server will start on port 8080. You can access it by navigating to `http://l
 
 ## Looks like this
 
-![Website](static/images/website.png)
+![website](https://github.com/user-attachments/assets/9143272f-f1c3-4d92-b3e6-61f6d30d59a2)
 
 ## App Architecture
 
-![image](https://github.com/user-attachments/assets/d841a524-e3c1-4ef8-b94e-811279310b2d)
+![Architecture](https://github.com/user-attachments/assets/d841a524-e3c1-4ef8-b94e-811279310b2d)
