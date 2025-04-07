@@ -1,144 +1,88 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <title>WEBFLIX.com</title>
-  <style>
-    body {
-      background-color: black;
-      background-image: url('webflix1.jpg');
-      margin: 0;
-      font-family: sans-serif;
-      color: white;
-    }
+<title>WEBFLIX.com</title>
 
-    header {
-      padding: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+<style>
 
-    .logo {
-      color: #9B30FF;
-      font-size: 40px;
-      font-weight: bold;
-    }
+body {
+  background-color:black;
+  background-image: url('webflix1.jpg');     
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
 
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      gap: 10px;
-      align-items: center;
-    }
+li {
+  float: right;
+}
 
-    nav li {
-      display: inline;
-    }
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size:20px;
+  font-family:Sans-serif;
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 20px;
-      padding: 14px 16px;
-      display: inline-block;
-    }
+li a:hover {
+  color:black;
+  background-color:#9B30FF;
+}
+button {
+  border-radius:12px;
+  background-color:#9B30FF; 
+  border:none; color:white; 
+  padding:15px 32px; 
+  font-size:20px;
+}
+button a:hover{
+  color:black;
+}
+a:link, a:visited {
+  color: white;
+  text-decoration: none;
+  cursor: hand;
+}
 
-    nav a:hover {
-      color: black;
-      background-color: #9B30FF;
-      border-radius: 6px;
-    }
-
-    .language-select {
-      background-color: #9B30FF;
-      color: white;
-      padding: 8px;
-      font-size: 18px;
-      border-radius: 3px;
-      border: none;
-    }
-
-    main {
-      text-align: center;
-      margin: 100px 0;
-    }
-
-    h1 {
-      font-size: 50px;
-      margin-bottom: 10px;
-    }
-
-    h2 {
-      font-size: 30px;
-      font-weight: normal;
-      margin-bottom: 30px;
-    }
-
-    .cta-button {
-      background-color: #9B30FF;
-      color: white;
-      border: none;
-      border-radius: 12px;
-      padding: 15px 32px;
-      font-size: 20px;
-      margin: 10px;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-    }
-
-    .cta-button:hover {
-      color: black;
-      background-color: #bf5fff;
-    }
-
-    .feature-image {
-      display: block;
-      width: 100%;
-      max-width: 1500px;
-      height: auto;
-      margin: 40px auto;
-      border: none;
-      background-color: black;
-    }
-  </style>
+a:link:active, a:visited:active {
+  color: grey;
+}
+</style>
 </head>
+
+<body><br>
+<ul>  
+  <h style="color:#9B30FF; font-family:Sans-serif; font-size:40px;"><b>| WEBFLIX |</b></h>
+  <li><a href="#help">Need Help?</a></li>
+  <li><a href="contact.html">Contact Us</a></li>
+  <li><a href="#policy">Policy</a></li>
+  <li><a href="#faq">FAQ</a></li>
+  <li>
+  <select style="color:white; background-color:#9B30FF; padding:8px; font-size:18px; margin-right:10px;border-radius:3px; margin-top:5px;">
+     <option>English</option>
+     <option>Hindi</option>
+     <option>Japanese</option>
+  </select>
+  </li>
+</ul>
+<br><br><br><br><br><br><br><br>
+<center>
+<p1 style="font-size:50px; color:white; font-family:Sans-serif;"><b>Your favorite movies, TV series and more.</b></p2><br>
+<p2 style="font-size:30px; color:white;"><b>Watch anywhere. Cancel anytime.</b></p2><br><br>
+<button><a href="movies.html"><b>Get Started<b></a></button>
+<button><a href="signin.html"><b>Sign in</b></a></button><br><br>
+</center><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<img src="tv1.png" height="500px" width="1500px" style="background-color:black; border:none;">
+<p></p>
+<img src="mobile1.png" height="500px" width="1500px" style="background-color:black; border:none;">
+<p></p>
+<img src="kids1.png" height="500px" width="1500px" style="background-color:black; border:none;">
 <body>
 
-  <header>
-    <div class="logo">| WEBFLIX |</div>
-    <nav>
-      <ul>
-        <li><a href="#help">Need Help?</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-        <li><a href="#policy">Policy</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li>
-          <select class="language-select">
-            <option>English</option>
-            <option>Hindi</option>
-            <option>Japanese</option>
-          </select>
-        </li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <h1>Your favorite movies, TV series and more.</h1>
-    <h2>Watch anywhere. Cancel anytime.</h2>
-    <a href="movies.html" class="cta-button"><b>Get Started</b></a>
-    <a href="signin.html" class="cta-button"><b>Sign In</b></a>
-  </main>
-
-  <section>
-    <img src="tv1.png" alt="Watch on TV" class="feature-image">
-    <img src="mobile1.png" alt="Watch on Mobile" class="feature-image">
-    <img src="kids1.png" alt="Watch for Kids" class="feature-image">
-  </section>
-
-</body>
 </html>
