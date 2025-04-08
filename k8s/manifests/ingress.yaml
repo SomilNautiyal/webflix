@@ -4,11 +4,7 @@ metadata:
   name: webflix
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
-  labels:
-    app: webflix
-    environment: production
 spec:
-  ingressClassName: nginx
   rules:
   - host: webflix.com
     http:

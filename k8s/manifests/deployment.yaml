@@ -5,13 +5,8 @@ metadata:
   labels:
     app: webflix
 spec:
-  replicas: 3  # Ensures high availability
-  revisionHistoryLimit: 2  # Keeps a few old ReplicaSets for rollback
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 1
+  replicas: 2
+  revisionHistoryLimit: 2
   selector:
     matchLabels:
       app: webflix
@@ -20,41 +15,8 @@ spec:
       labels:
         app: webflix
     spec:
-      securityContext:
-        runAsNonRoot: true
-        runAsUser: 1001
-        fsGroup: 1001
       containers:
-        - name: webflix
-          image: somdock7/webflix:v1
-          imagePullPolicy: IfNotPresent
-          ports:
-            - containerPort: 8080
-          resources:
-            requests:
-              cpu: "250m"
-              memory: "256Mi"
-            limits:
-              cpu: "500m"
-              memory: "512Mi"
-          readinessProbe:
-            httpGet:
-              path: /
-              port: 8080
-            initialDelaySeconds: 5
-            periodSeconds: 10
-            failureThreshold: 3
-          livenessProbe:
-            httpGet:
-              path: /
-              port: 8080
-            initialDelaySeconds: 15
-            periodSeconds: 20
-            failureThreshold: 3
-          securityContext:
-            allowPrivilegeEscalation: false
-            readOnlyRootFilesystem: true
-            runAsNonRoot: true
-            runAsUser: 1001
-      terminationGracePeriodSeconds: 30
-      
+      - name: webflix
+        image: somdock7/webflix:v1
+        ports:
+        - containerPort: 8080
