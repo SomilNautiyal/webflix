@@ -1,0 +1,26 @@
+# Ignore the Dockerfile and dockerignore themselves
+Dockerfile
+.dockerignore
+
+# Ignore Go build artifacts
+main
+*.out
+*.exe
+
+# Ignore Git-related files
+.git
+.gitignore
+
+# Ignore IDE/editor configs
+.vscode
+.idea
+*.swp
+
+# Ignore test files
+*_test.go
+
+# Ignore logs
+*.log
+
+# Ignore temp files
+*.tmp
