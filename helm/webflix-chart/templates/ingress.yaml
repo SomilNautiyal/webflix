@@ -2,13 +2,19 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: webflix
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  labels:
+    app: webflix
+    environment: production
 spec:
+  ingressClassName: nginx
   rules:
   - host: webflix.com
     http:
       paths: 
       - path: /
-        pathType: ImplementationSpecific
+        pathType: Prefix
         backend:
           service:
             name: webflix
