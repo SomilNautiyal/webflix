@@ -8,7 +8,7 @@ image:
   repository: somdock7/webflix
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "14328348358"
+  tag: "14330679320"
 
 ingress:
   enabled: false
