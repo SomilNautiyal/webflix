@@ -1,4 +1,4 @@
-FROM golang:1.23 AS builder
+FROM golang:1.24 AS builder
 
 WORKDIR /app
 
@@ -9,14 +9,13 @@ RUN go mod download
 COPY . .
 
 RUN CGO_ENABLED=0 GOOS=linux go build -o main .
-    
+
 # Stage 2
-# FROM gcr.io/distroless/static:nonroot
+FROM gcr.io/distroless/base
 
-# COPY --from=builder /app/main /main
-
-USER nonroot:nonroot
+COPY --from=builder /app/main .
+COPY --from=builder /app/static ./static
 
 EXPOSE 8080
 
-ENTRYPOINT ["/main"]
+ENTRYPOINT ["./main"]
